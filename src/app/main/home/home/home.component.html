@@ -1,0 +1,73 @@
+<div class="home_section" fxLayout="column" fxLayoutAlign=" space-around center">
+    <div class="cover_img_section">
+        <img src="assets/images/one.png" alt="cover_img" class="cover_img"/>
+<!--        <img src="assets/images/cover.jpg" alt="cover_img" class="cover_img"/>-->
+    </div>
+    <div class="content_section" >
+        <div fxLayout="column" fxLayoutAlign="space-around center"  >
+<!--            <div class="cover_title_text">-->
+<!--                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.-->
+<!--                The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,-->
+<!--                as opposed to using 'Content here, content here'-->
+<!--            </div>-->
+            <div class="cover_title_text">
+
+                এই ওয়েবসাইট দিয়ে চাইলেই খুবই সহজে মাত্র পাঁচ সেকেন্ডে আপনার প্রিয় প্রার্থীর সাথে তৈরি
+                করতে পারেন একটি স্মার্ট ডিজিটাল ব্যানার। এক্ষেত্রে শুধু আপনার ছবি, নাম এবং পদবী (যদি থাকে) দিয়ে ডাউনলোড বাটনে চাপ দিলেই আপনার মোবাইলে চলে আসবে আপনার প্রিয় প্রার্থীর সাথে একটি স্মার্ট ডিজিটাল ব্যানার।
+                ব্যানারের গ্যালারি থেকে যেকোনো একটি টেমপ্লেট সিলেক্ট করতে পারবেন আপনার ইচ্ছামত
+
+            </div>
+            <div class="welcome_text" >
+                আপনার সমর্থিত জনপ্রতিনিধি কে শুভেচ্ছা জানান।
+            </div>
+        </div>
+
+      <mat-card class="form_section">
+          <div class="form_title"> আপনার সমর্থিত জনপ্রতিনিধি কে শুভেচ্ছা জানান।</div>
+          <form class="" [formGroup]="createForm" fxLayoutAlign=" space-around center" fxLayout="row wrap" fxLayoutGap="30px">
+              <div fxLayout="row " fxLayoutAlign="space-between" fxLayoutGap="24px" fxFlex="100">
+                  <div fxLayout="row" fxLayoutAlign="start center" fxFlex="50">
+                      <mat-form-field appearance="outline" fxFlex="100">
+                          <mat-label>Division</mat-label>
+                          <mat-select formControlName="division" required>
+                              <mat-option  *ngFor="let divi of division" [value]="divi.name"> {{divi.city}}</mat-option>
+                          </mat-select>
+                      </mat-form-field>
+                  </div>
+
+                  <div fxLayout="row" fxLayoutAlign="start center" fxFlex="50">
+                      <mat-form-field appearance="outline" fxFlex="100">
+                          <mat-label>Person</mat-label>
+                          <mat-select [disabled]="!createForm.get('division').value" formControlName="name" required (selectionChange)="OnSelect($event)">
+                              <mat-option  *ngFor="let divi of person" [value]="divi.name"> {{divi.person}}</mat-option>
+                          </mat-select>
+                      </mat-form-field>
+                  </div>
+              </div>
+          </form>
+      </mat-card>
+
+
+
+
+
+
+        <div>
+
+        </div>
+
+
+<!--        <div class="canvas_box">-->
+<!--            <app-bird-simulation-canvas></app-bird-simulation-canvas>-->
+<!--        </div>-->
+
+
+
+
+    </div>
+</div>
+
+
+<!--<div class="canvas_box">-->
+<!--    <app-bird-simulation-canvas></app-bird-simulation-canvas>-->
+<!--</div>-->

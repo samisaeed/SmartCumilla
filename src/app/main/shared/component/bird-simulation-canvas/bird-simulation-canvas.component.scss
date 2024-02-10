@@ -1,0 +1,146 @@
+//$shadow : #507abd;
+//$bgColor: #5d84c3;
+//$ribbonColor:	#fff;
+//
+//html{	background-color:$bgColor; }
+//
+///* The ribbon */
+//
+//.ribbon{
+//    width:100px;
+//    height:150px;
+//    background-color:$ribbonColor;
+//    position:absolute;
+//    right:100px;
+//    top:-350px;
+//    animation:drop forwards .8s 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+//    &:before{
+//        content: '';
+//        position: absolute;
+//        z-index: 2;
+//        left: 0;
+//        bottom: -50px;
+//        border-left: 50px solid $ribbonColor;
+//        border-right: 50px solid $ribbonColor;
+//        border-bottom: 50px solid transparent;
+//    }
+//    &:after{
+//        content:'';
+//        width:200px;
+//        height:270px;
+//        position: absolute;
+//        z-index: -1;
+//        left: 0;
+//        bottom:-120px;
+//        background-color:$shadow;
+//        transform:skewY(35deg) skewX(0);
+//    }
+//}
+//
+//@keyframes drop{
+//    0%		{ top:-350px; }
+//    100%	{ top:0; }
+//}
+
+
+.main_canvas_box{
+    //width: 100%; /* adjust as needed */
+    //height: 400px; /* adjust as needed */
+}
+.background-canvas {
+    position: relative;
+}
+
+#canv {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* adjust as needed */
+    height: 400px; /* adjust as needed */
+    //width: 100%; /* adjust as needed */
+    //height: 100%; /* adjust as needed */
+    z-index: -1; /* place the canvas behind the text */
+}
+
+.middle_text{
+    position: relative; /* or use absolute if needed */
+    z-index: 1; /* place the text above the canvas */
+}
+
+//body{
+//    width:100%;
+//    min-height:100%;
+//    margin:0;
+//    overflow:hidden;
+//}
+canvas{
+    z-index:99;
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    background: linear-gradient(#B7B0E3, #FFD3D6);
+}
+
+
+@keyframes anim {
+    from {
+        transform: translateX(200%);
+    }
+    to {
+        transform: translateX(-200%);
+    }
+}
+
+@keyframes anime {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-200%);
+    }
+}
+.c1, .c2 {
+    width: 10600px;
+    height: 42000px;
+    position: absolute;
+    background: transparent url("~assets/canvas/clouds.png") 0 0 no-repeat;
+    background-size: 100%;
+    z-index:999;
+}
+.c1.one, .c2.one {
+    top: -260px;
+    left: 0px;
+}
+.c1.two, .c2.two {
+    top: -200px;
+    left: 100px;
+}
+.c1.three, .c2.three {
+    top: -240px;
+    right: 100px;
+}
+.c1.four, .c22.four {
+    top: -180px;
+    right: 0px;
+}
+
+.c2 .one {
+    top: -209px;
+}
+@media (max-width: 1023px) {
+    .c2.one {left: -80px;}
+    .c2.two {left: -120px;}
+    .c2.three {right: 220px;}
+    .c2.four {right: 220px;}
+}
+
+.c1 {
+    animation: anime 1000s linear infinite forwards;
+}
+
+.c2 {
+    transform: translateX(200%);
+    animation: anim 1000s linear infinite forwards;
+}
