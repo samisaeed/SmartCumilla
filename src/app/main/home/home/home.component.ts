@@ -8,6 +8,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 })
 export class HomeComponent implements OnInit {
     createForm: FormGroup;
+    public isPersonActive = false;
     public division = [{name: 'cumilla', city: 'CUMILLA'}];
     public person = [{name: 'tanim', person: 'Tamin'}];
     constructor(   private formBuilder: FormBuilder) {
@@ -23,6 +24,6 @@ export class HomeComponent implements OnInit {
     }
 
     public OnSelect(event): void {
-
+      this.isPersonActive = true;
     }
 }

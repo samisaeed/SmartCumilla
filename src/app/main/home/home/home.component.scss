@@ -59,19 +59,56 @@
     }
 
 }
-
-
-.canvas_box{
-    width: 100%;
+.person_details{
+    width: 80%;
+    text-align: center;
+    margin: auto auto 4rem;
 }
-
-.block {
-    border: 2px solid black;
-    width: 100%;
-    height:100px;
-    margin-bottom:20px;
-    margin-right:10px;
+.img_person{
+    width: 600px;
+    height: 200px;
+    border-radius: 15%;
 }
-.poster {
-    width:50%;
+.person_name{
+    margin-top: 5px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #212121;
+    text-align: center;
 }
+.person_bio{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #5C5C5C;
+}
+.download_info{
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: rgb(185, 28, 28);
+    margin-top: 2rem;
+}
+.template_section{
+    width: 80%;
+    margin: auto auto 3rem;
+}
+//.canvas_box{
+//    width: 100%;
+//}
+//
+//.block {
+//    border: 2px solid black;
+//    width: 100%;
+//    height:100px;
+//    margin-bottom:20px;
+//    margin-right:10px;
+//}
+//.poster {
+//    width:50%;
+//}
