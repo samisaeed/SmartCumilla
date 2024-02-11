@@ -1,15 +1,9 @@
-<div class="home_section" fxLayout="column" fxLayoutAlign=" space-around center">
+<div class="home_section" fxLayout="column" fxLayoutAlign=" space-around center" xmlns="http://www.w3.org/1999/html">
     <div class="cover_img_section">
-        <img src="assets/images/Cover3.jpg" alt="cover_img" class="cover_img" />
-        <!--        <img src="assets/images/cover.jpg" alt="cover_img" class="cover_img"/>-->
+        <img src="assets/images/Cover3.jpg" alt="cover_img" class="cover_img"/>
     </div>
     <div class="content_section">
         <div fxLayout="column" fxLayoutAlign="space-around center">
-            <!--            <div class="cover_title_text">-->
-            <!--                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.-->
-            <!--                The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,-->
-            <!--                as opposed to using 'Content here, content here'-->
-            <!--            </div>-->
             <div class="cover_title_text">
 
                 এই ওয়েবসাইট দিয়ে চাইলেই খুবই সহজে মাত্র পাঁচ সেকেন্ডে আপনার প্রিয় প্রার্থীর সাথে তৈরি
@@ -25,42 +19,47 @@
 
         <mat-card class="form_section">
             <div class="form_title"> আপনার সমর্থিত জনপ্রতিনিধি কে শুভেচ্ছা জানান।</div>
-            <form class="" [formGroup]="createForm" fxLayoutAlign=" space-around center" fxLayout="row wrap"
-                fxLayoutGap="30px">
-                <div fxLayout="row " fxLayoutAlign="space-between" fxLayoutGap="24px" fxFlex="100">
-                    <div fxLayout="row" fxLayoutAlign="start center" fxFlex="50">
-                        <mat-form-field appearance="outline" fxFlex="100">
-                            <mat-label>জেলা </mat-label>
-                            <mat-select formControlName="division" required>
-                                <mat-option *ngFor="let divi of division" [value]="divi.name">
-                                    {{divi.city}}</mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                    </div>
+            <form class="" [formGroup]="createForm">
+                <div fxLayout="row" fxLayout.xs="column">
+                    <div class="block">
+                        <div fxLayout="row" fxLayoutAlign="start center" fxFlex="100">
+                            <mat-form-field appearance="outline" fxFlex="100">
+                                <mat-label>জেলা</mat-label>
+                                <mat-select formControlName="division" required>
+                                    <mat-option *ngFor="let divi of division" [value]="divi.name">
+                                        {{divi.city}}</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
 
-                    <div fxLayout="row" fxLayoutAlign="start center" fxFlex="50">
-                        <mat-form-field appearance="outline" fxFlex="100">
-                            <mat-label> আসন নংঃ</mat-label>
-                            <mat-select [disabled]="!createForm.get('division').value" formControlName="name" required
-                                (selectionChange)="OnSelect($event)">
-                                <mat-option *ngFor="let divi of person" [value]="divi.name">
-                                    {{divi.person}}</mat-option>
-                            </mat-select>
-                        </mat-form-field>
+                    </div>
+                    <div class="block">
+                        <div fxLayout="row" fxLayoutAlign="start center" fxFlex="100">
+                            <mat-form-field appearance="outline" fxFlex="100">
+                                <mat-label> আসন নংঃ</mat-label>
+                                <mat-select [disabled]="!createForm.get('division').value" formControlName="name"
+                                            required
+                                            (selectionChange)="OnSelect($event)">
+                                    <mat-option *ngFor="let divi of person" [value]="divi.name">
+                                        {{divi.person}}</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
                     </div>
                 </div>
             </form>
         </mat-card>
-        <div *ngIf="!isPersonActive">
+        <div *ngIf="isPersonActive">
             <mat-card class="person_details" fxLayout="row " fxLayoutAlign=" space-around center">
-                <div fxLayout="row " fxLayoutAlign="space-between" fxLayoutGap="24px" fxFlex="100">
-                    <div fxLayout="row" fxLayoutAlign="start center" fxFlex="20">
-                        <div>
-                            <img class="img_person" src="assets/images/person1.jpeg" alt="person" />
+
+                <div fxLayout="row" fxLayout.xs="column">
+                    <div class="img_container">
+                        <div class="img_section">
+                            <img class="img_person" src="assets/images/person1.jpeg" alt="person"/>
                             <div class="person_name"> নূর উর রহমান মাহমুদ তানিম</div>
                         </div>
                     </div>
-                    <div fxLayout="row" fxLayoutAlign="start center" fxFlex="80">
+                    <div class="personal_bio_section">
                         <div class="person_bio">
                             নূর উর রহমান মাহমুদ তানিম
                             উপদেষ্টা
@@ -71,62 +70,94 @@
                             সাবেক ভি.পি ও জি.এস
                             কুমিল্লা ভিক্টোরিয়া কলেজ
                         </div>
-
                     </div>
                 </div>
             </mat-card>
 
             <div class="download_info">ডাউনলোড করার পূর্বে নিচের যে কোনো একটি নমুনা চিহ্নিত করুন</div>
 
-            <div class="template_section">
-                    <app-img-template *ngFor="let bannerName of assetBannerFileNames; let i = index;" [avatarSrc]="avatarSrc" [name]="name"
-                                      [designation]="designation" [bannerName]="bannerName" (click)="onclick(bannerName, i)"
-                                      [class.template_box] = "i === isActiveTemplate"
-                    ></app-img-template>
-
-            </div>
-
-            <div class="input_container">
-                <div class="input_box">
-                    <label for="">আপনার ছবি বাছাই করুন</label>
-                    <input type="file" (change)="onFileSelected($event)" class="input_text"
-                        placeholder="আপনার ছবি বাছাই করুন" />
-                </div>
-                <div class="input_box">
-                    <label for="">আপনার নাম লিখুন</label>
-                    <input matInput [(ngModel)]="name" type="text" class="input_text" placeholder="আপনার নাম লিখুন" />
-                </div>
-                <div class="input_box">
-                    <label for="">আপনার পদবী লিখুন</label>
-                    <input matInput [(ngModel)]="designation" type="text" class="input_text"
-                        placeholder="আপনার পদবী লিখুন" />
+            <div class="template_section" #componentToCapture>
+                <div class="template" [class.active]="activeTemplate && activeTemplate == i"
+                     *ngFor="let bannerName of assetBannerFileNames; let i = index">
+<!--                    <app-img-template (click)="activeTemplate = i" [avatarSrc]="avatarSrc" [name]="name"-->
+<!--                                      [designation]="designation" [bannerName]="bannerName"></app-img-template>-->
+                    <app-img-template (click)="activeTemplate = i" [avatarSrc]="avatarSrc" [name]="createForm.get('personName').value"
+                                      [designation]="createForm.get('personPosition').value" [bannerName]="bannerName"></app-img-template>
                 </div>
             </div>
-            <button class="gen_btn" (click)="onClickDownload()">Generate</button>
+            <!--            <div class="input_container">-->
+            <!--                <div class="block">-->
+            <!--                <div class="input_box">-->
+            <!--                    <label for="">আপনার ছবি বাছাই করুন</label>-->
+            <!--                    <input type="file" accept="image/png, image/gif, image/jpeg"  (change)="onFileSelected($event)" class="input_text"-->
+            <!--                        placeholder="আপনার ছবি বাছাই করুন" />-->
+            <!--                </div>-->
+            <!--                </div>-->
+            <!--                <div class="block">-->
+            <!--                <div class="input_box">-->
+            <!--                    <label for="">আপনার নাম লিখুন</label>-->
+            <!--                    <input matInput [(ngModel)]="name" type="text" class="input_text" placeholder="আপনার নাম লিখুন" />-->
+            <!--                </div>-->
+            <!--                </div>-->
+            <!--                <div class="block">-->
+            <!--                <div class="input_box">-->
+            <!--                    <label for="">আপনার পদবী লিখুন</label>-->
+            <!--                    <input matInput [(ngModel)]="designation" type="text" class="input_text"-->
+            <!--                        placeholder="আপনার পদবী লিখুন" />-->
+            <!--                </div>-->
+            <!--                </div>-->
+            <!--            </div>-->
 
+            <!--            <button class="gen_btn" (click)="captureComponent()">Generate</button>-->
+
+            <mat-card class="form_section">
+                <div class="form_title">ডিজিটাল ব্যানারের জন্য আপনার তথ্য দিন:</div>
+                <form class="" [formGroup]="createForm">
+                    <div fxLayout="row" fxLayout.xs="column">
+                        <div class="block">
+                            <div fxLayout="row" fxLayoutAlign="start center" fxFlex="100">
+
+                                    <input type="file"  accept="image/png, image/gif, image/jpeg"  (change)="onFileSelected($event)"
+                                           [hidden]="true" #imageInput (change)="onFileSelected($event)">
+                                    <div class="img_cap_box" (click)="imageInput.click()">
+                                        আপনার ছবি বাছাই করুন
+                                    </div>
+                            </div>
+
+                        </div>
+                        <div class="block">
+                            <div fxLayout="row" fxLayoutAlign="start center" fxFlex="100">
+                                <mat-form-field appearance="outline" fxFlex="100">
+                                    <mat-label> আপনার নাম লিখুন</mat-label>
+                                    <input matInput [(ngModel)]="name" type="text" class="input_text" formControlName="personName"
+                                           placeholder="আপনার নাম লিখুন"/>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="block">
+                            <div fxLayout="row" fxLayoutAlign="start center" fxFlex="100">
+                                <mat-form-field appearance="outline" fxFlex="100">
+                                    <mat-label>আপনার পদবী লিখুন</mat-label>
+                                    <input matInput [(ngModel)]="designation" type="text" class="input_text" formControlName="personPosition"
+                                           placeholder="আপনার পদবী লিখুন"/>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin: auto; text-align: center;">
+                        <button class="gen_btn" (click)="captureComponent()">ডাউনলোড করুন</button>
+
+                    </div>
+                </form>
+            </mat-card>
 
         </div>
-
-
-
-
-
-
-
 
 
         <div>
 
         </div>
-
-
-        <!--        <div class="canvas_box">-->
-        <!--            <app-bird-simulation-canvas></app-bird-simulation-canvas>-->
-        <!--        </div>-->
-
-
-
-
     </div>
 </div>
 
