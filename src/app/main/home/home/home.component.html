@@ -30,7 +30,7 @@
                 <div fxLayout="row " fxLayoutAlign="space-between" fxLayoutGap="24px" fxFlex="100">
                     <div fxLayout="row" fxLayoutAlign="start center" fxFlex="50">
                         <mat-form-field appearance="outline" fxFlex="100">
-                            <mat-label>Division</mat-label>
+                            <mat-label>জেলা </mat-label>
                             <mat-select formControlName="division" required>
                                 <mat-option *ngFor="let divi of division" [value]="divi.name">
                                     {{divi.city}}</mat-option>
@@ -40,7 +40,7 @@
 
                     <div fxLayout="row" fxLayoutAlign="start center" fxFlex="50">
                         <mat-form-field appearance="outline" fxFlex="100">
-                            <mat-label>Person</mat-label>
+                            <mat-label> আসন নংঃ</mat-label>
                             <mat-select [disabled]="!createForm.get('division').value" formControlName="name" required
                                 (selectionChange)="OnSelect($event)">
                                 <mat-option *ngFor="let divi of person" [value]="divi.name">
@@ -56,17 +56,20 @@
                 <div fxLayout="row " fxLayoutAlign="space-between" fxLayoutGap="24px" fxFlex="100">
                     <div fxLayout="row" fxLayoutAlign="start center" fxFlex="20">
                         <div>
-                            <img class="img_person" src="assets/images/cards/card1.jpg" alt="person" />
-                            <div class="person_name"> পারবেন আপনার ইচ্ছামত</div>
+                            <img class="img_person" src="assets/images/person1.jpeg" alt="person" />
+                            <div class="person_name"> নূর উর রহমান মাহমুদ তানিম</div>
                         </div>
                     </div>
                     <div fxLayout="row" fxLayoutAlign="start center" fxFlex="80">
                         <div class="person_bio">
-                            এই ওয়েবসাইট দিয়ে চাইলেই খুবই সহজে মাত্র পাঁচ সেকেন্ডে আপনার প্রিয় প্রার্থীর সাথে তৈরি
-                            করতে পারেন একটি স্মার্ট ডিজিটাল ব্যানার। এক্ষেত্রে শুধু আপনার ছবি, নাম এবং পদবী (যদি থাকে)
-                            দিয়ে ডাউনলোড বাটনে চাপ দিলেই আপনার মোবাইলে চলে আসবে আপনার প্রিয় প্রার্থীর সাথে একটি
-                            স্মার্ট ডিজিটাল ব্যানার।
-                            ব্যানারের গ্যালারি থেকে যেকোনো একটি টেমপ্লেট সিলেক্ট করতে পারবেন আপনার ইচ্ছামত
+                            নূর উর রহমান মাহমুদ তানিম
+                            উপদেষ্টা
+                            কুমিল্লা মহানগর আওয়ামী লীগ
+                            সাবেক ত্রান ও সমাজকল্যান সম্পাদক কুমিল্লা মহানগর আওয়ামী লীগ
+                            সাবেক সদস্য
+                            বাংলাদেশ ছাত্রলীগ, কেন্দ্রীয় কার্যনির্বাহী সংসদ
+                            সাবেক ভি.পি ও জি.এস
+                            কুমিল্লা ভিক্টোরিয়া কলেজ
                         </div>
 
                     </div>
@@ -76,8 +79,11 @@
             <div class="download_info">ডাউনলোড করার পূর্বে নিচের যে কোনো একটি নমুনা চিহ্নিত করুন</div>
 
             <div class="template_section">
-                <app-img-template *ngFor="let bannerName of assetBannerFileNames" [avatarSrc]="avatarSrc" [name]="name"
-                    [designation]="designation" [bannerName]="bannerName"></app-img-template>
+                    <app-img-template *ngFor="let bannerName of assetBannerFileNames; let i = index;" [avatarSrc]="avatarSrc" [name]="name"
+                                      [designation]="designation" [bannerName]="bannerName" (click)="onclick(bannerName, i)"
+                                      [class.template_box] = "i === isActiveTemplate"
+                    ></app-img-template>
+
             </div>
 
             <div class="input_container">
@@ -96,7 +102,7 @@
                         placeholder="আপনার পদবী লিখুন" />
                 </div>
             </div>
-            <button class="gen_btn">Generate</button>
+            <button class="gen_btn" (click)="onClickDownload()">Generate</button>
 
 
         </div>
