@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import html2canvas from 'html2canvas';
 
 @Component({
     selector: 'app-home',
@@ -7,6 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
     styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+    @ViewChild('componentToCapture', { static: false }) componentToCapture: ElementRef;
     createForm: FormGroup;
     public isPersonActive = false;
     public division = [{ name: 'cumilla', city: 'CUMILLA' }];
@@ -19,6 +21,7 @@ export class HomeComponent implements OnInit {
     avatarSrc: any;
     name: any = '';
     designation: any = '';
+    activeTemplate: any;
 
     constructor(private formBuilder: FormBuilder) {
 
@@ -45,6 +48,24 @@ export class HomeComponent implements OnInit {
             };
             reader.readAsDataURL(file);
         }
+    }
+    captureComponent() {
+        if (!this.activeTemplate) return;
+        const elements = this.componentToCapture.nativeElement.querySelectorAll('app-img-template');
+        const elementToCapture = elements[this.activeTemplate];
+
+        html2canvas(elementToCapture).then(canvas => {
+            // Convert the canvas to a base64 encoded image
+            const image = canvas.toDataURL('image/png');
+
+            // Create a download link
+            const link = document.createElement('a');
+            link.download = 'component-screenshot.png';
+            link.href = image;
+
+            // Click the link to trigger download
+            link.click();
+        });
     }
 
 }

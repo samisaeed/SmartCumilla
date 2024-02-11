@@ -51,7 +51,7 @@
                 </div>
             </form>
         </mat-card>
-        <div *ngIf="!isPersonActive">
+        <div *ngIf="isPersonActive">
             <mat-card class="person_details" fxLayout="row " fxLayoutAlign=" space-around center">
                 <div fxLayout="row " fxLayoutAlign="space-between" fxLayoutGap="24px" fxFlex="100">
                     <div fxLayout="row" fxLayoutAlign="start center" fxFlex="20">
@@ -75,9 +75,12 @@
 
             <div class="download_info">ডাউনলোড করার পূর্বে নিচের যে কোনো একটি নমুনা চিহ্নিত করুন</div>
 
-            <div class="template_section">
-                <app-img-template *ngFor="let bannerName of assetBannerFileNames" [avatarSrc]="avatarSrc" [name]="name"
-                    [designation]="designation" [bannerName]="bannerName"></app-img-template>
+            <div class="template_section" #componentToCapture>
+                <div class="template" [class.active]="activeTemplate && activeTemplate == i"
+                    *ngFor="let bannerName of assetBannerFileNames; let i = index">
+                    <app-img-template (click)="activeTemplate = i" [avatarSrc]="avatarSrc" [name]="name"
+                        [designation]="designation" [bannerName]="bannerName"></app-img-template>
+                </div>
             </div>
 
             <div class="input_container">
@@ -96,7 +99,7 @@
                         placeholder="আপনার পদবী লিখুন" />
                 </div>
             </div>
-            <button class="gen_btn">Generate</button>
+            <button class="gen_btn" (click)="captureComponent()">Generate</button>
 
 
         </div>
