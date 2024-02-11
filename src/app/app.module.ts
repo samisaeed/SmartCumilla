@@ -17,11 +17,11 @@ import { fuseConfig } from 'app/fuse-config';
 
 import { AppComponent } from 'app/app.component';
 import { LayoutModule } from 'app/layout/layout.module';
-import {HomeModule} from './main/home/home.module';
+import { HomeModule } from './main/home/home.module';
 
 const appRoutes: Routes = [
     {
-        path      : '**',
+        path: '**',
         redirectTo: '/'
     }
 ];
@@ -60,6 +60,5 @@ const appRoutes: Routes = [
         AppComponent
     ]
 })
-export class AppModule
-{
+export class AppModule {
 }

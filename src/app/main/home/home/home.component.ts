@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
     selector: 'app-home',
@@ -9,9 +9,18 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 export class HomeComponent implements OnInit {
     createForm: FormGroup;
     public isPersonActive = false;
-    public division = [{name: 'cumilla', city: 'CUMILLA'}];
-    public person = [{name: 'tanim', person: 'Tamin'}];
-    constructor(   private formBuilder: FormBuilder) {
+    public division = [{ name: 'cumilla', city: 'CUMILLA' }];
+    public person = [{ name: 'tanim', person: 'Tamin' }];
+
+    assetBannerFileNames = [
+        'tem-1', 'tem-2', 'tem-3'
+    ]
+
+    avatarSrc: any;
+    name: any = '';
+    designation: any = '';
+
+    constructor(private formBuilder: FormBuilder) {
 
     }
 
@@ -24,6 +33,18 @@ export class HomeComponent implements OnInit {
     }
 
     public OnSelect(event): void {
-      this.isPersonActive = true;
+        this.isPersonActive = true;
     }
+
+    onFileSelected(event: any) {
+        const file: File = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = () => {
+                this.avatarSrc = reader.result as string;
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+
 }
