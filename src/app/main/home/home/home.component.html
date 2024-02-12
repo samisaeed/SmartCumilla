@@ -1,6 +1,6 @@
 <div class="home_section" fxLayout="column" fxLayoutAlign=" space-around center" xmlns="http://www.w3.org/1999/html">
     <div class="cover_img_section">
-        <img src="assets/images/Cover3.jpg" alt="cover_img" class="cover_img"/>
+        <img src="assets/images/Cover-5.jpg" alt="cover_img" class="cover_img" />
     </div>
     <div class="content_section">
         <div fxLayout="column" fxLayoutAlign="space-around center">
@@ -38,8 +38,7 @@
                             <mat-form-field appearance="outline" fxFlex="100">
                                 <mat-label> আসন নংঃ</mat-label>
                                 <mat-select [disabled]="!createForm.get('division').value" formControlName="name"
-                                            required
-                                            (selectionChange)="OnSelect($event)">
+                                    required (selectionChange)="OnSelect($event)">
                                     <mat-option *ngFor="let divi of person" [value]="divi.name">
                                         {{divi.person}}</mat-option>
                                 </mat-select>
@@ -55,7 +54,7 @@
                 <div fxLayout="row" fxLayout.xs="column">
                     <div class="img_container">
                         <div class="img_section">
-                            <img class="img_person" src="assets/images/person1.jpeg" alt="person"/>
+                            <img class="img_person" src="assets/images/person1.jpeg" alt="person" />
                             <div class="person_name"> নূর উর রহমান মাহমুদ তানিম</div>
                         </div>
                     </div>
@@ -77,12 +76,14 @@
             <div class="download_info">ডাউনলোড করার পূর্বে নিচের যে কোনো একটি নমুনা চিহ্নিত করুন</div>
 
             <div class="template_section" #componentToCapture>
-                <div class="template" [class.active]="activeTemplate && activeTemplate == i"
-                     *ngFor="let bannerName of assetBannerFileNames; let i = index">
-<!--                    <app-img-template (click)="activeTemplate = i" [avatarSrc]="avatarSrc" [name]="name"-->
-<!--                                      [designation]="designation" [bannerName]="bannerName"></app-img-template>-->
-                    <app-img-template (click)="activeTemplate = i" [avatarSrc]="avatarSrc" [name]="createForm.get('personName').value"
-                                      [designation]="createForm.get('personPosition').value" [bannerName]="bannerName"></app-img-template>
+                <div class="template" [class.active]="activeTemplate == i"
+                    *ngFor="let bannerName of assetBannerFileNames; let i = index">
+                    <!--                    <app-img-template (click)="activeTemplate = i" [avatarSrc]="avatarSrc" [name]="name"-->
+                    <!--                                      [designation]="designation" [bannerName]="bannerName"></app-img-template>-->
+                    <app-img-template (click)="activeTemplate = i" [avatarSrc]="avatarSrc"
+                        [name]="createForm.get('personName').value"
+                        [designation]="createForm.get('personPosition').value"
+                        [bannerName]="bannerName"></app-img-template>
                 </div>
             </div>
             <!--            <div class="input_container">-->
@@ -117,11 +118,12 @@
                         <div class="block">
                             <div fxLayout="row" fxLayoutAlign="start center" fxFlex="100">
 
-                                    <input type="file"  accept="image/png, image/gif, image/jpeg"  (change)="onFileSelected($event)"
-                                           [hidden]="true" #imageInput (change)="onFileSelected($event)">
-                                    <div class="img_cap_box" (click)="imageInput.click()">
-                                        আপনার ছবি বাছাই করুন
-                                    </div>
+                                <input type="file" accept="image/png, image/gif, image/jpeg"
+                                    (change)="onFileSelected($event)" [hidden]="true" #imageInput
+                                    (change)="onFileSelected($event)">
+                                <div class="img_cap_box" (click)="imageInput.click()">
+                                    আপনার ছবি বাছাই করুন
+                                </div>
                             </div>
 
                         </div>
@@ -129,8 +131,8 @@
                             <div fxLayout="row" fxLayoutAlign="start center" fxFlex="100">
                                 <mat-form-field appearance="outline" fxFlex="100">
                                     <mat-label> আপনার নাম লিখুন</mat-label>
-                                    <input matInput [(ngModel)]="name" type="text" class="input_text" formControlName="personName"
-                                           placeholder="আপনার নাম লিখুন"/>
+                                    <input matInput [(ngModel)]="name" type="text" class="input_text"
+                                        formControlName="personName" placeholder="আপনার নাম লিখুন" />
                                 </mat-form-field>
                             </div>
                         </div>
@@ -139,8 +141,8 @@
                             <div fxLayout="row" fxLayoutAlign="start center" fxFlex="100">
                                 <mat-form-field appearance="outline" fxFlex="100">
                                     <mat-label>আপনার পদবী লিখুন</mat-label>
-                                    <input matInput [(ngModel)]="designation" type="text" class="input_text" formControlName="personPosition"
-                                           placeholder="আপনার পদবী লিখুন"/>
+                                    <input matInput [(ngModel)]="designation" type="text" class="input_text"
+                                        formControlName="personPosition" placeholder="আপনার পদবী লিখুন" />
                                 </mat-form-field>
                             </div>
                         </div>

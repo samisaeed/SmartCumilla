@@ -16,16 +16,16 @@ export class HomeComponent implements OnInit {
     public person = [{ name: 'কুমিল্লা', person: 'কুমিল্লা - ৬' }];
 
     assetBannerFileNames = [
-        'tem-1', 'tem-2', 'tem-3'
+        'tem-1', 'tem-2'
     ];
-    @ViewChild('screen', {static: false}) screen: ElementRef;
-    @ViewChild('canvas', {static: false}) canvas: ElementRef;
-    @ViewChild('downloadLink', {static: false}) downloadLink: ElementRef;
+    @ViewChild('screen', { static: false }) screen: ElementRef;
+    @ViewChild('canvas', { static: false }) canvas: ElementRef;
+    @ViewChild('downloadLink', { static: false }) downloadLink: ElementRef;
 
     avatarSrc: any;
     name: any = '';
     designation: any = '';
-    isActiveTemplate = 0 ;
+    isActiveTemplate = 0;
     capturedImage;
     activeTemplate: any;
 
@@ -77,7 +77,7 @@ export class HomeComponent implements OnInit {
     }
 
     onclick(name, index): void {
-     this.isActiveTemplate = index;
+        this.isActiveTemplate = index;
     }
 
     onClickDownload(): void {
