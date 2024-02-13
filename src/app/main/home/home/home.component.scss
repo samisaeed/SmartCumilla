@@ -27,7 +27,7 @@
             width: 80%;
             font-style: normal;
             font-weight: 400;
-            font-size: 16px;
+            font-size: 20px;
             line-height: 150%;
             color: #5C5C5C;
             text-align: center;
@@ -55,7 +55,7 @@
             .form_title {
                 font-style: normal;
                 font-weight: 400;
-                font-size: 16px;
+                font-size: 28px;
                 line-height: 150%;
                 color: #212121;
                 text-align: center;
@@ -73,8 +73,8 @@
 }
 
 .img_person {
-    width: 600px;
-    height: 300px;
+    //width: 600px;
+    //height: 300px;
     border: 12px solid #395723;
 }
 .profile_bio_details{
@@ -110,7 +110,7 @@
 
 .bio_info_title{
     font-weight: 700;
-    font-family: 'Muli', 'Helvetica Neue', 'Arial', sans-serif;
+    //font-family: 'Muli', 'Helvetica Neue', 'Arial', sans-serif;
     font-size: 18px;
     line-height: 130%;
     color: #212121;
@@ -118,7 +118,7 @@
 }
 .bio_info_subtitle {
     font-style: normal;
-    font-family: 'Muli', 'Helvetica Neue', 'Arial', sans-serif;
+    //font-family: 'Muli', 'Helvetica Neue', 'Arial', sans-serif;
     font-weight: 400;
     font-size: 15px;
     line-height: 110%;
@@ -126,6 +126,7 @@
     text-align: end;
 }
 .bio_text2 {
+    //font-family: 'Muli', 'Helvetica Neue', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
@@ -166,7 +167,7 @@
 .download_info {
     text-align: center;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 16px;
     line-height: 150%;
     color: rgb(185, 28, 28);
@@ -187,7 +188,6 @@
     padding: 20px;
     border: 1px solid gray;
     transition: all 0.2s;
-    padding: 0px;
 
     &:hover {
         padding: 10px;
@@ -267,17 +267,20 @@
 }
 
 .gen_btn {
-    //width: 10%;
+    //font-family: 'Unicode', sans-serif;
     height: 40px;
     background-color: #CA0000;
     border: none;
     border-radius: 5px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 150%;
-    color: #FFFFFF;
+
     cursor: pointer;
+    .btn_text{
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: #FFFFFF;
+    }
 }
 
 
@@ -330,7 +333,7 @@
 
 @media screen and (max-device-width: 640px) {
     .cover_title_text {
-        font-size: 15px !important;
+        font-size: 16px !important;
         line-height: 120% !important;
     }
 

@@ -10,34 +10,32 @@ import html2canvas from 'html2canvas';
 })
 export class HomeComponent implements OnInit {
     @ViewChild('componentToCapture', { static: false }) componentToCapture: ElementRef;
-    createForm: FormGroup;
+    public createForm: FormGroup;
     public isPersonActive = false;
     public division = [{ name: 'কুমিল্লা', city: 'কুমিল্লা' }];
-    public person = [{ name: 'কুমিল্লা', person: 'কুমিল্লা সিটি কর্পোরেশন' }];
+    public person  = [];
+    public candidate = [];
 
-    assetBannerFileNames = [
+    public assetBannerFileNames = [
         'tem-1', 'tem-2'
     ];
     @ViewChild('screen', { static: false }) screen: ElementRef;
     @ViewChild('canvas', { static: false }) canvas: ElementRef;
     @ViewChild('downloadLink', { static: false }) downloadLink: ElementRef;
 
-    avatarSrc: any;
-    name: any = '';
-    designation: any = '';
-    isActiveTemplate = 0;
-    capturedImage;
-    activeTemplate: any;
+    public avatarSrc: any;
+    public name: any = '';
+    public designation: any = '';
+    public activeTemplate = 0;
 
-    constructor(private formBuilder: FormBuilder) {
-
-    }
+    constructor(private formBuilder: FormBuilder) {}
 
 
     ngOnInit(): void {
         this.createForm = this.formBuilder.group({
             division: ['', Validators.required],
             name: ['', [Validators.required]],
+            candidate: ['', [Validators.required]],
             personName: [''],
             personPosition: [''],
         });
@@ -46,8 +44,14 @@ export class HomeComponent implements OnInit {
     public OnSelect(event): void {
         this.isPersonActive = true;
     }
+    public OnSelectName(event): void {
+        this.person.push({ name: 'কুমিল্লা', person: 'কুমিল্লা সিটি কর্পোরেশন' });
+    }
+    public OnSelectCity(event): void {
+        this.candidate.push({ name: 'তানিম', person: 'নূর-উর রহমান মাহমুদ তানিম' });
+    }
 
-    onFileSelected(event: any) {
+    public onFileSelected(event: any): void{
         const file: File = event.target.files[0];
         if (file) {
             const reader = new FileReader();
@@ -57,10 +61,10 @@ export class HomeComponent implements OnInit {
             reader.readAsDataURL(file);
         }
     }
-    captureComponent() {
-        if (!this.activeTemplate) { return; }
+    public captureComponent(): void {
         const elements = this.componentToCapture.nativeElement.querySelectorAll('app-img-template');
         const elementToCapture = elements[this.activeTemplate];
+
 
         html2canvas(elementToCapture).then(canvas => {
             // Convert the canvas to a base64 encoded image
@@ -68,7 +72,7 @@ export class HomeComponent implements OnInit {
 
             // Create a download link
             const link = document.createElement('a');
-            link.download = 'component-screenshot.png';
+            link.download = 'নূর-উর রহমান মাহমুদ তানিম.png';
             link.href = image;
 
             // Click the link to trigger download
@@ -76,43 +80,10 @@ export class HomeComponent implements OnInit {
         });
     }
 
-    onclick(name, index): void {
-        this.isActiveTemplate = index;
-    }
-
-    onClickDownload(): void {
-        // html2canvas(document.querySelector('#tem1')).then(canvas => {
-        //
-        //     /// document.body.appendChild(canvas);
-        //     this.capturedImage = canvas.toDataURL();
-        //     console.log("canvas.toDataURL() -->" + this.capturedImage);
-        //     // this will contain something like (note the ellipses for brevity), console.log cuts it off
-        //     // "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAa0AAAB3CAYAAACwhB/KAAAXr0lEQVR4Xu2dCdiNZf7HP/ZQkpQtaUxDjYYoTSYlURMhGlmKa..."
-        //
-        //
-        //     canvas.toBlob( (blob) =>{
-        //
-        //         //  just pass blob to something expecting a blob
-        //         // somfunc(blob);
-        //
-        //         // Same as canvas.toDataURL(), just longer way to do it.
-        //         var reader = new FileReader();
-        //         reader.readAsDataURL(blob);
-        //         // tslint:disable-next-line:only-arrow-functions
-        //         reader.onloadend =  () => {
-        //             let base64data = reader.result;
-        //             console.log("Base64--> " + base64data);
-        //         }
-        //
-        //     });
-        //
-        //
-        // });
-        html2canvas(this.screen.nativeElement).then(canvas => {
-            this.canvas.nativeElement.src = canvas.toDataURL();
-            this.downloadLink.nativeElement.href = canvas.toDataURL('image/png');
-            this.downloadLink.nativeElement.download = 'marble-diagram.png';
-            this.downloadLink.nativeElement.click();
-        });
+    public pdfDownload(): void{
+        const link = document.createElement('a');
+        link.download = "নূর-উর রহমান মাহমুদ তানিম";
+        link.href = "assets/images/Tanimvai.pdf";
+        link.click();
     }
 }
