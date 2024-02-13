@@ -1,0 +1,23 @@
+@font-face {
+    font-family:'Unicode';
+    src: url('Unicode/Unicode.ttf');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family:'Unicode';
+    src: url('Unicode/Unicode.ttf');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family:'Unicode';
+    src: url('Unicode/Unicode.ttf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family:'Unicode';
+    src: url('Unicode/Unicode.ttf');
+    font-weight: 400;
+}

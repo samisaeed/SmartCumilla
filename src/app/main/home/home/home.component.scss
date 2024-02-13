@@ -75,22 +75,86 @@
 .img_person {
     width: 600px;
     height: 300px;
-    border-radius: 50%;
+    border: 12px solid #395723;
+}
+.profile_bio_details{
+    margin-top: 5px;
+    .name_box{
+        background-color: #395723;
+        .person_name {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 150%;
+            color: #FFFFFF;
+            text-align: center;
+        }
+    }
+.bio_text_section{
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
-.person_name {
-    margin-top: 5px;
+
+
+}
+
+.bio_text1 {
     font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
+    font-weight: 700;
+    font-size: 18px;
     line-height: 150%;
     color: #212121;
-    text-align: center;
+    text-align: end;
 }
-.personal_bio_section{
-    margin: auto;
+
+.bio_info_title{
+    font-weight: 700;
+    font-family: 'Muli', 'Helvetica Neue', 'Arial', sans-serif;
+    font-size: 18px;
+    line-height: 130%;
+    color: #212121;
+    text-align: end;
+}
+.bio_info_subtitle {
+    font-style: normal;
+    font-family: 'Muli', 'Helvetica Neue', 'Arial', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 110%;
+    color: #212121;
+    text-align: end;
+}
+.bio_text2 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 150%;
+    color: #212121;
+    text-align: end;
+}
+.fil_up_point{
+    color: black !important;
+    background-color: black;
+    border-radius: 50%;
+    font-size: 15px !important;
+    min-width: 15px !important;
+    width: 15px !important;
+    height: 15px !important;
+    min-height: 15px !important;
+}
+.round_up_point{
+    font-size: 15px !important;
+    min-width: 15px !important;
+    width: 15px !important;
+    height: 15px !important;
+    min-height: 15px !important;
+}
+.personal_bio_section {
+    margin: 10px;
     padding-top: 25px;
 }
+
 .person_bio {
     font-style: normal;
     font-weight: 400;
@@ -121,7 +185,7 @@
 .template {
     width: 100%;
     padding: 20px;
-    border: 2px solid black;
+    border: 1px solid gray;
     transition: all 0.2s;
     padding: 0px;
 
@@ -136,31 +200,24 @@
 
 }
 
-.template_box{
+.template_box {
     border: 2px solid red;
     padding: 7px;
 }
-//.canvas_box{
-//    width: 100%;
-//}
-//
+
 .block {
-    //border: 2px solid black;
     width: 100%;
-    //height:100px;
-    margin-bottom:20px;
-    margin-right:10px;
+    margin-bottom: 20px;
+    margin-right: 10px;
 }
 
-.img_section{
+.img_section {
     width: 280px;
 }
-.img_container{
+
+.img_container {
     margin: auto;
 }
-//.poster {
-//    width:50%;
-//}
 
 .input_container {
     display: flex;
@@ -195,7 +252,7 @@
 
 }
 
-.img_cap_box{
+.img_cap_box {
     width: 100%;
     height: 61px;
     padding-top: 20px;
@@ -208,6 +265,7 @@
     font-size: 16px;
     line-height: 150%;
 }
+
 .gen_btn {
     //width: 10%;
     height: 40px;
@@ -270,23 +328,23 @@
 
 }
 
-@media screen
-and (max-device-width: 640px) {
+@media screen and (max-device-width: 640px) {
     .cover_title_text {
-        font-size: 15px!important;
-        line-height: 120%!important;
+        font-size: 15px !important;
+        line-height: 120% !important;
     }
 
     .welcome_text {
-        margin-top: 4rem!important;
-        font-size: 18px!important;
+        margin-top: 4rem !important;
+        font-size: 18px !important;
     }
-    .img_section{
-        width: 200px!important;
+
+    .img_section {
+        width: 200px !important;
     }
 
     .img_person {
-        height: 200px!important;
+        height: 200px !important;
     }
 
 }

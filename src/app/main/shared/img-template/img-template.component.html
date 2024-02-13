@@ -2,7 +2,7 @@
   <div class="template_img">
     <img src="assets/templates/{{bannerName}}.jpg" alt="">
     <div class="content_img_container">
-      <img [src]="avatarSrc" alt="">
+      <img *ngIf="avatarSrc" [src]="avatarSrc" alt="">
     </div>
     <div class="content_text_container text-1"> {{ name }} </div>
     <div class="content_text_container text-2"> {{ designation }} </div>

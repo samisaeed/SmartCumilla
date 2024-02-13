@@ -13,19 +13,19 @@ export class HomeComponent implements OnInit {
     createForm: FormGroup;
     public isPersonActive = false;
     public division = [{ name: 'কুমিল্লা', city: 'কুমিল্লা' }];
-    public person = [{ name: 'কুমিল্লা', person: 'কুমিল্লা - ৬' }];
+    public person = [{ name: 'কুমিল্লা', person: 'কুমিল্লা সিটি কর্পোরেশন' }];
 
     assetBannerFileNames = [
-        'tem-1', 'tem-2', 'tem-3'
+        'tem-1', 'tem-2'
     ];
-    @ViewChild('screen', {static: false}) screen: ElementRef;
-    @ViewChild('canvas', {static: false}) canvas: ElementRef;
-    @ViewChild('downloadLink', {static: false}) downloadLink: ElementRef;
+    @ViewChild('screen', { static: false }) screen: ElementRef;
+    @ViewChild('canvas', { static: false }) canvas: ElementRef;
+    @ViewChild('downloadLink', { static: false }) downloadLink: ElementRef;
 
     avatarSrc: any;
     name: any = '';
     designation: any = '';
-    isActiveTemplate = 0 ;
+    isActiveTemplate = 0;
     capturedImage;
     activeTemplate: any;
 
@@ -58,7 +58,7 @@ export class HomeComponent implements OnInit {
         }
     }
     captureComponent() {
-        if (!this.activeTemplate) return;
+        if (!this.activeTemplate) { return; }
         const elements = this.componentToCapture.nativeElement.querySelectorAll('app-img-template');
         const elementToCapture = elements[this.activeTemplate];
 
@@ -77,7 +77,7 @@ export class HomeComponent implements OnInit {
     }
 
     onclick(name, index): void {
-     this.isActiveTemplate = index;
+        this.isActiveTemplate = index;
     }
 
     onClickDownload(): void {
