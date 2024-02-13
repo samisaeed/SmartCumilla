@@ -14,3 +14,21 @@
         z-index: 99;
     }
 }
+.for_mobile{
+    display: none;
+}
+
+
+@media screen and (max-device-width: 640px) {
+    .mobile{
+        font-size: 12px!important;
+    }
+    .for_mobile{
+        display: block;
+        margin-top: -11px;
+        margin-left: -20px;
+    }
+    .for_pc{
+        display: none;
+    }
+}

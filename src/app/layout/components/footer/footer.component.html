@@ -1,19 +1,27 @@
 <mat-toolbar>
 
-    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutAlign.gt-xs="space-between center" fxFlex>
+    <div class="mobile" fxLayout="row" fxLayoutAlign="center center" fxLayoutAlign.gt-xs="space-between center" fxFlex>
         <div>
             <span> Copyright © 2024</span>
-            <span class="ml-12 mr-12">
-                <img style="width: 70px!important; height: 40px!important;" src="assets/images/red2.png" alt="redcodex"/>
+            <span class="ml-12 mr-12 for_pc">
+                <img style="width: 70px!important; height: 40px!important;" src="assets/images/red2.png"
+                     alt="redcodex"/>
             </span>
-            <span> <span style="color: #FFFFFF">Red </span> <span style="color: #910000">Codex</span>. All rights reserved</span>
+            <span>
+                <span class="mr-8">
+                    <span style="color: #FFFFFF">Red </span> <span style="color: #910000">Codex</span>
+                </span>
+                <span class="for_pc">&bull;</span>
+                <a  class="for_mobile" mat-button href="tel:+8801752565106">Call +8801752565106</a>
+               <span  class="ml-8 for_pc">All rights reserved .</span>
+            </span>
         </div>
 
 
         <div fxLayout="row" fxLayoutAlign="start center" fxHide fxShow.gt-xs>
-            <a mat-button href="mailto:abc@example.com" target=”_blank” >Send Email</a>
+            <a mat-button href="mailto:sync@redcodexltd.com" target=”_blank”>sync@redcodexltd.com</a>
             <span>&bull;</span>
-            <a  mat-button href="tel:+8801752565106">Call +8801752565106</a>
+            <a mat-button href="tel:+8801752565106">Call +8801752565106</a>
         </div>
 
     </div>
