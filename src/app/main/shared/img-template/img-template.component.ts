@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-img-template',
@@ -6,15 +6,13 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./img-template.component.scss']
 })
 export class ImgTemplateComponent implements OnInit {
-
   @Input() bannerName: string;
   @Input() avatarSrc: string;
   @Input() name: string;
   @Input() designation: string;
-
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

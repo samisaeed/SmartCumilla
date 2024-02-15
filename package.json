@@ -1,7 +1,6 @@
 {
-    "name": "fuse",
+    "name": "your-digital-banner",
     "version": "8.1.2",
-    "license": "https://themeforest.net/licenses/terms/regular",
     "scripts": {
         "ng": "ng",
         "start": "ng serve --open",

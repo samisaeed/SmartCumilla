@@ -12,6 +12,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { ImgTemplateComponent } from '../shared/img-template/img-template.component';
 import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from "@angular/material/button";
 
 
 const routes = [
@@ -35,6 +36,7 @@ const routes = [
         MatSelectModule,
         MatSelectModule,
         MatIconModule,
+        MatButtonModule,
     ]
 })
 export class HomeModule {

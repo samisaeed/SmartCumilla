@@ -1,5 +1,5 @@
 
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import html2canvas from 'html2canvas';
 
@@ -8,7 +8,7 @@ import html2canvas from 'html2canvas';
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit  {
     @ViewChild('componentToCapture', { static: false }) componentToCapture: ElementRef;
     public createForm: FormGroup;
     public isPersonActive = false;
@@ -27,7 +27,6 @@ export class HomeComponent implements OnInit {
     public name: any = '';
     public designation: any = '';
     public activeTemplate = 0;
-
     constructor(private formBuilder: FormBuilder) {}
 
 
@@ -39,8 +38,8 @@ export class HomeComponent implements OnInit {
             personName: [''],
             personPosition: [''],
         });
+        console.log(window.devicePixelRatio);
     }
-
     public OnSelect(event): void {
         this.isPersonActive = true;
     }
@@ -64,26 +63,32 @@ export class HomeComponent implements OnInit {
     public captureComponent(): void {
         const elements = this.componentToCapture.nativeElement.querySelectorAll('app-img-template');
         const elementToCapture = elements[this.activeTemplate];
+        const scaleValue  =  window.devicePixelRatio <= 2 ? 4 : 14;
+        html2canvas(elementToCapture, {
+            scale: scaleValue , // Adjust scale for higher quality
+            logging: true // Enable logging for debugging
+        }).then(canvas => {
+            // Convert canvas to image
+            const imgData = canvas.toDataURL('image/png');
 
-
-        html2canvas(elementToCapture).then(canvas => {
-            // Convert the canvas to a base64 encoded image
-            const image = canvas.toDataURL('image/png');
-
-            // Create a download link
+            // Create a temporary link element
             const link = document.createElement('a');
-            link.download = 'নূর-উর রহমান মাহমুদ তানিম.png';
-            link.href = image;
+            link.href = imgData;
+            link.download =  'নূর-উর রহমান মাহমুদ তানিম.png';
 
-            // Click the link to trigger download
+            // Append link to the body and trigger the download
+            document.body.appendChild(link);
             link.click();
+
+            // Clean up
+            document.body.removeChild(link);
         });
     }
 
     public pdfDownload(): void{
         const link = document.createElement('a');
-        link.download = "নূর-উর রহমান মাহমুদ তানিম";
-        link.href = "assets/images/Tanimvai.pdf";
+        link.download = 'নূর-উর রহমান মাহমুদ তানিম';
+        link.href = 'assets/images/Tanimvai.pdf';
         link.click();
     }
 }

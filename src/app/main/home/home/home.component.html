@@ -1,245 +1,262 @@
-<div class="home_section" fxLayout="column" fxLayoutAlign=" space-around center" xmlns="http://www.w3.org/1999/html">
-    <div class="cover_img_section">
-        <img src="assets/images/Cover-5.jpg" alt="cover_img" class="cover_img"/>
+<div class="page-layout simple fullwidth">
+    <!-- HEADER -->
+    <div class="container">
+        <div class="CoverImage FlexEmbed FlexEmbed--3by1"></div>
     </div>
-    <div class="content_section">
-        <div fxLayout="column" fxLayoutAlign="space-around center">
-            <div class="cover_title_text">
+    <!-- / HEADER -->
+    <!-- CONTENT -->
+    <div class="content">
 
-                এই ওয়েবসাইট দিয়ে চাইলেই খুব সহজে আপনার প্রিয় প্রার্থীর সাথে তৈরি করতে পারেন একটি স্মার্ট ডিজিটাল
-                ব্যানার। এক্ষেত্রে শুধু আপনার ছবি, নাম এবং পদবী (যদি থাকে) দিয়ে ডাউনলোড বাটনে চাপ দিলেই আপনার মোবাইলে
-                চলে আসবে আপনার প্রিয় প্রার্থীর সাথে একটি স্মার্ট ডিজিটাল ব্যানার। ব্যানারের গ্যালারি থেকে যেকোনো একটি
-                টেমপ্লেট সিলেক্ট করতে পারবেন আপনার ইচ্ছামত।
+        <div fxLayout="column" fxLayoutAlign="center">
 
-            </div>
-            <div class="welcome_text">
-                আপনার সমর্থিত জনপ্রতিনিধি কে শুভেচ্ছা জানান
-            </div>
-        </div>
-
-        <mat-card class="form_section">
-            <div class="form_title"> আপনার নির্বাচনী জেলা, সিটি কর্পোরেশন এবং প্রার্থী নিশ্চিত করুনঃ</div>
-            <form class="" [formGroup]="createForm">
-                <div fxLayout="row" fxLayout.xs="column">
-                    <div class="block">
-                        <div fxLayout="row" fxLayoutAlign="start center" fxFlex="100">
-                            <mat-form-field appearance="outline" fxFlex="100">
-                                <mat-label>জেলা</mat-label>
-                                <mat-select formControlName="division" required (selectionChange)="OnSelectName($event)">
-                                    <mat-option *ngFor="let divi of division" [value]="divi.name">
-                                        {{divi.city}}</mat-option>
-                                </mat-select>
-                            </mat-form-field>
-                        </div>
-
-                    </div>
-                    <div class="block">
-                    <div fxLayout="row" fxLayoutAlign="start center" fxFlex="100">
-                        <mat-form-field appearance="outline" fxFlex="100">
-                            <mat-label>সিটি কর্পোরেশনঃ</mat-label>
-                            <mat-select formControlName="name" (selectionChange)="OnSelectCity($event)"
-                                        required>
-                                <mat-option *ngFor="let city of person" [value]="city.name">
-                                    {{city.person}}</mat-option>
-                            </mat-select>
-                        </mat-form-field>
+            <div class="content_section mt-48">
+                <div fxLayout="column" fxLayoutAlign="space-around center">
+                    <h1 class="cover_title_text margin-full">
+                        এই ওয়েবসাইট দিয়ে চাইলেই খুব সহজে আপনার প্রিয় প্রার্থীর সাথে তৈরি করতে পারেন একটি স্মার্ট
+                        ডিজিটাল
+                        ব্যানার। এক্ষেত্রে শুধু আপনার ছবি, নাম এবং পদবী (যদি থাকে) দিয়ে ডাউনলোড বাটনে চাপ দিলেই আপনার
+                        মোবাইলে
+                        চলে আসবে আপনার প্রিয় প্রার্থীর সাথে একটি স্মার্ট ডিজিটাল ব্যানার। ব্যানারের গ্যালারি থেকে
+                        যেকোনো একটি
+                        টেমপ্লেট সিলেক্ট করতে পারবেন আপনার ইচ্ছামত।
+                    </h1>
+                    <div class="welcome_text">
+                        আপনার সমর্থিত জনপ্রতিনিধি কে শুভেচ্ছা জানান
                     </div>
                 </div>
-                    <div class="block">
-                        <div fxLayout="row" fxLayoutAlign="start center" fxFlex="100">
-                            <mat-form-field appearance="outline" fxFlex="100">
-                                <mat-label>প্রার্থীর নামঃ</mat-label>
-                                <mat-select formControlName="candidate"
-                                            required (selectionChange)="OnSelect($event)">
-                                    <mat-option *ngFor="let people of candidate" [value]="people.name">
-                                        {{people.person}}</mat-option>
-                                </mat-select>
-                           </mat-form-field>
-                        </div>
-                    </div>
 
-                </div>
-            </form>
-        </mat-card>
-        <div *ngIf="isPersonActive">
-            <mat-card class="person_details" fxLayout="row " fxLayoutAlign=" space-around center">
+                <mat-card class="form_section margin-full">
+                    <div class="form_title"> আপনার নির্বাচনী জেলা, সিটি কর্পোরেশন এবং প্রার্থী নিশ্চিত করুন ঃ</div>
+                    <form [formGroup]="createForm">
+                        <div fxLayout="row" fxLayout.xs="column">
+                            <div class="block">
+                                <div fxLayout="row" fxLayoutAlign="start center" fxFlex="100">
+                                    <mat-form-field appearance="outline" fxFlex="100">
+                                        <mat-label>জেলা</mat-label>
+                                        <mat-select formControlName="division" required
+                                                    (selectionChange)="OnSelectName($event)">
+                                            <mat-option *ngFor="let divi of division" [value]="divi.name">
+                                                {{divi.city}}</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
 
-                <div fxLayout="row" fxLayout.xs="column">
-                    <div class="img_container">
-                        <div class="img_section">
-                            <img class="img_person" src="assets/images/person2.JPG" alt="person"/>
-                            <div class="profile_bio_details">
-                                <div class="name_box">
-                                    <div class="person_name"> নূর-উর রহমান মাহমুদ তানিম</div>
-                                </div>
-                                <div class="bio_text_section">
-                                    <div class="bio_text1">উপদেষ্টা</div>
-                                    <div class="bio_text2">কুমিল্লা মহানগর আওয়ামী লীগ</div>
-                                </div>
-                                <div class="bio_text_section">
-                                    <div class="bio_text1">সাবেক ত্রান ও সমাজকল্যান সম্পাদক</div>
-                                    <div class="bio_text2">কুমিল্লা মহানগর আওয়ামী লীগ</div>
-                                </div>
-                                <div class="bio_text_section">
-                                    <div class="bio_text1">সাবেক সদস্য</div>
-                                    <div class="bio_text2">বাংলাদেশ ছাত্রলীগ, কেন্দ্রীয় কার্যনির্বাহী সংসদ</div>
-                                </div>
-                                <div class="bio_text_section">
-                                    <div class="bio_text1">সাবেক ভি.পি ও জি.এস</div>
-                                    <div class="bio_text2">কুমিল্লা ভিক্টোরিয়া কলেজ</div>
+                            </div>
+                            <div class="block">
+                                <div fxLayout="row" fxLayoutAlign="start center" fxFlex="100">
+                                    <mat-form-field appearance="outline" fxFlex="100">
+                                        <mat-label>সিটি কর্পোরেশনঃ</mat-label>
+                                        <mat-select formControlName="name" (selectionChange)="OnSelectCity($event)"
+                                                    required>
+                                            <mat-option *ngFor="let city of person" [value]="city.name">
+                                                {{city.person}}</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="personal_bio_section">
-                        <div style="text-align: left;">
-                            <div>
-                                <span class="bio_info_title mr-4"> <mat-icon class="fil_up_point">lens</mat-icon>  রাজনৈতিক বর্তমান দায়িত্বঃ</span>
-                                <span class="bio_info_subtitle ml-4">   উপদেষ্টা, কুমিল্লা মহানগর আওয়ামী লীগ।</span>
+                            <div class="block">
+                                <div fxLayout="row" fxLayoutAlign="start center" fxFlex="100">
+                                    <mat-form-field appearance="outline" fxFlex="100">
+                                        <mat-label>প্রার্থীর নামঃ</mat-label>
+                                        <mat-select formControlName="candidate"
+                                                    required (selectionChange)="OnSelect($event)">
+                                            <mat-option *ngFor="let people of candidate" [value]="people.name">
+                                                {{people.person}}</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
                             </div>
 
-                            <div class="mt-8">
-                                <ng-container>
-                                    <span class="bio_info_title mr-4"> <mat-icon class="fil_up_point">lens</mat-icon>  রাজনৈতিক দায়িত্ব সমুহঃ </span>
-                                </ng-container>
-                                <div class="ml-28 mt-4">
+                        </div>
+                    </form>
+                </mat-card>
+
+                <div *ngIf="isPersonActive">
+                    <mat-card class="person_details margin-full" fxLayout="row " fxLayoutAlign=" space-around center">
+
+                        <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between start" fxLayoutGap="20px" >
+                            <div class="">
+                                <div class="img_section">
+                                    <img class="img_person" src="assets/images/person2.JPG" alt="person"/>
+                                    <div class="profile_bio_details">
+                                        <div class="name_box">
+                                            <div class="person_name"> নূর-উর রহমান মাহমুদ তানিম</div>
+                                        </div>
+                                        <div class="bio_text_section">
+                                            <div class="bio_text1">উপদেষ্টা</div>
+                                            <div class="bio_text2">কুমিল্লা মহানগর আওয়ামী লীগ</div>
+                                        </div>
+                                        <div class="bio_text_section">
+                                            <div class="bio_text1">সাবেক ত্রান ও সমাজকল্যান সম্পাদক</div>
+                                            <div class="bio_text2">কুমিল্লা মহানগর আওয়ামী লীগ</div>
+                                        </div>
+                                        <div class="bio_text_section">
+                                            <div class="bio_text1">সাবেক সদস্য</div>
+                                            <div class="bio_text2">বাংলাদেশ ছাত্রলীগ, কেন্দ্রীয় কার্যনির্বাহী সংসদ
+                                            </div>
+                                        </div>
+                                        <div class="bio_text_section">
+                                            <div class="bio_text1">সাবেক ভি.পি ও জি.এস</div>
+                                            <div class="bio_text2">কুমিল্লা ভিক্টোরিয়া কলেজ ছাত্র সংসদ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="personal_bio_section">
+                                <div style="text-align: left;">
+                                    <div>
+                                        <span class="bio_info_title mr-4"> <mat-icon
+                                            class="fil_up_point">lens</mat-icon>  রাজনৈতিক বর্তমান দায়িত্বঃ</span>
+                                        <span
+                                            class="bio_info_subtitle ml-4">   উপদেষ্টা, কুমিল্লা মহানগর আওয়ামী লীগ।</span>
+                                    </div>
+
+                                    <div class="mt-8">
+                                        <ng-container>
+                                            <span class="bio_info_title mr-4"> <mat-icon
+                                                class="fil_up_point">lens</mat-icon>  রাজনৈতিক দায়িত্ব সমুহঃ </span>
+                                        </ng-container>
+                                        <div class="ml-28 mt-4">
                                     <span class="bio_info_subtitle ml-4"><mat-icon
                                         class="round_up_point">lens</mat-icon>   ত্রাণ ও সমাজকল্যান সম্পাদক কুমিল্লা মহানগর আওয়ামীলীগ।</span>
-                                </div>
-                                <div class="ml-28 mt-4">
+                                        </div>
+                                        <div class="ml-28 mt-4">
                                     <span class="bio_info_subtitle ml-4"><mat-icon
                                         class="round_up_point">lens</mat-icon>   সদস্য, বাংলাদেশ ছাত্রলীগ, কেন্দ্রীয় কার্যনির্বাহী সংসদ।</span>
-                                </div>
-                                <div class="ml-28 mt-4">
+                                        </div>
+                                        <div class="ml-28 mt-4">
                                     <span class="bio_info_subtitle ml-4"><mat-icon
                                         class="round_up_point">lens</mat-icon>   সিনিয়ার সহ সভাপতি, কুমিল্লা জেলা ছাত্রলীগ।</span>
-                                </div>
-                                <div class="ml-28 mt-4">
+                                        </div>
+                                        <div class="ml-28 mt-4">
                                     <span class="bio_info_subtitle ml-4"><mat-icon
                                         class="round_up_point">lens</mat-icon>   সদস্য, কুমিল্লা জেলা ছাত্রলীগ।</span>
-                                </div>
-                                <div class="ml-28 mt-4">
+                                        </div>
+                                        <div class="ml-28 mt-4">
                                     <span class="bio_info_subtitle ml-4"><mat-icon
                                         class="round_up_point">lens</mat-icon>   ভিপি ১৯৯৬-৯৭ কুমিল্লা ভিক্টোরিয়াবিশ্ববিদ্যালয় কলেজ ছাত্র সংসদ (রেকর্ড সংখ্যক সর্বোচ্চ ভোট প্রাপ্তি)।</span>
-                                </div>
-                                <div class="ml-28 mt-4">
+                                        </div>
+                                        <div class="ml-28 mt-4">
                                     <span class="bio_info_subtitle ml-4"><mat-icon
                                         class="round_up_point">lens</mat-icon>   জি এস ১৯৯২-৯৩ কুমিল্লা ভিক্টোরিয়া বিশ্ববিদ্যালয় কলেজ ছাত্র সংসদ (রেকর্ড সংখ্যক সর্বোচ্চ ভোট প্রাপ্তি)।</span>
-                                </div>
-                                <div class="ml-28 mt-4">
+                                        </div>
+                                        <div class="ml-28 mt-4">
                                     <span class="bio_info_subtitle ml-4"><mat-icon
                                         class="round_up_point">lens</mat-icon>   আমোদ প্রমোদ সম্পাদক ১৯৯১-৯২ কুমিল্লা ভিক্টোরিয়া বিশ্ববিদ্যালয় কলেজ ছাত্র সংসদ (রেকর্ড সংখ্যক সর্বোচ্চ ভোট প্রাপ্তি)।</span>
-                                </div>
-                                <div class="ml-28 mt-4">
+                                        </div>
+                                        <div class="ml-28 mt-4">
                                     <span class="bio_info_subtitle ml-4"><mat-icon
                                         class="round_up_point">lens</mat-icon>    আমোদ প্রমোদ সম্পাদক ১৯৯০- ৯১ কুমিল্লা ভিক্টোরিয়া বিশ্ববিদ্যালয় কলেজ ছাত্র সংসদ (রেকর্ড সংখ্যক সর্বোচ্চ ভোট প্রাপ্তি) রাজনৈতিক আন্দোলন।</span>
-                                </div>
-                            </div>
+                                        </div>
+                                    </div>
 
-                            <div class="mt-8">
-                                <ng-container>
-                                    <span class="bio_info_title mr-4"> <mat-icon class="fil_up_point">lens</mat-icon> রাজনৈতিক আন্দোলনঃ </span>
-                                </ng-container>
-                                <div class="ml-28 mt-4">
+                                    <div class="mt-8">
+                                        <ng-container>
+                                            <span class="bio_info_title mr-4"> <mat-icon
+                                                class="fil_up_point">lens</mat-icon> রাজনৈতিক আন্দোলনঃ </span>
+                                        </ng-container>
+                                        <div class="ml-28 mt-4">
                                     <span class="bio_info_subtitle ml-4"><mat-icon
                                         class="round_up_point">lens</mat-icon>    ২০০৫ সালে তৎকালিন বিএনপি - জামাত জোট সরকারের রাজনৈতিক প্রতিহিংসার ঘৃণ্য শিকার হয়ে র‍্যাব কর্তৃক গ্রেফতার হয়ে নির্যাতন ও বারবার দীর্ঘ কারাবরণ।</span>
-                                </div>
-                                <div class="ml-28 mt-4">
+                                        </div>
+                                        <div class="ml-28 mt-4">
                                     <span class="bio_info_subtitle ml-4"><mat-icon
                                         class="round_up_point">lens</mat-icon>    ১৯৯১ সালে খালেদা বিরোধী আন্দোলনে তৎকালীন এম.পি রেদোয়ান আহম্মদের দায়ের করা মামলায় কারাবরণ।</span>
-                                </div>
-                                <div class="ml-28 mt-4">
+                                        </div>
+                                        <div class="ml-28 mt-4">
                                     <span class="bio_info_subtitle ml-4"><mat-icon
                                         class="round_up_point">lens</mat-icon>    ১৯৯০ সালের স্বৈরাচার ও সাম্প্রদায়িকতা বিরোধী আন্দোলনের অংশগ্রহনের কারনে একাধিকবার কারাবরণ।</span>
-                                </div>
-                                <div class="ml-28 mt-4">
+                                        </div>
+                                        <div class="ml-28 mt-4">
                                     <span class="bio_info_subtitle ml-4"><mat-icon
                                         class="round_up_point">lens</mat-icon>    ১৯৯০ সাল থেকে শুরু করে এরশাদ, খালেদা নিজামী সরকার বিরোধী আন্দোলনে দলীয় প্রতিটি কর্মসূচীতে ছাত্রলীগ কেন্দ্রীয় সদস্য হিসাবে নেতৃত্ব দান, সক্রিয় ও সরব অংশগ্রহণ।</span>
-                                </div>
-                                <div class="ml-28 mt-4">
+                                        </div>
+                                        <div class="ml-28 mt-4">
                                     <span class="bio_info_subtitle ml-4"><mat-icon
                                         class="round_up_point">lens</mat-icon>    ছাত্র রাজনীতির সূদীর্ঘ সময়ে জামাত শিবির সহ সাম্প্রদায়িক অপশক্তিকে মোকাবেলা করতে যেয়ে বারবার আক্রমনের শিকার ও অসংখ্য ষড়যন্ত্রমূলক মামলায় জড়িয়ে হয়রানি ও নির্যাতন সহ বারংবার দীর্ঘ কারাবরণ।</span>
-                                </div>
-                                <div class="ml-28 mt-4">
+                                        </div>
+                                        <div class="ml-28 mt-4">
                                     <span class="bio_info_subtitle ml-4"><mat-icon
                                         class="round_up_point">lens</mat-icon>     জামাত শিবির কর্তৃক পারিবারিক ভাবে আক্রান্ত। (ছোট ভাই নঈম-উর রহমান মাহমুদ তুহিনকে পায়ে গুলি করা হয়। উল্লেখ্য, সে জেলা ফুটবল ও ক্রিকেট দলের অন্যতম সদস্য ও ভিক্টোরিয়া বিশ্ববিদ্যালয় কলেজের ক্রিকেট দলের দলনেতা ছিল।)</span>
-                                </div>
-
-                                <div>
-
+                                        </div>
+                                    </div>
+                                    <div class="ml-24 mt-20" style="width: fit-content;">
+                                        <button mat-button class="gen_btn" (click)="captureComponent()">
+                                            <span class="btn_text">জীবন বৃত্তান্ত ডাউনলোড করুন</span>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+                    </mat-card>
 
-                            <button class="gen_btn ml-36 mt-12"(click)="pdfDownload()">
-                                <span class="btn_text"> জীবন বৃত্তান্ত ডাউনলোড করুন</span>
-                            </button>
+                    <div class="download_info">ডাউনলোড করার পূর্বে নিচের যে কোনো একটি নমুনা চিহ্নিত করুন</div>
+
+                    <div class="template_section" #componentToCapture>
+                        <div class="template" [class.active]="activeTemplate == i"
+                             *ngFor="let bannerName of assetBannerFileNames; let i = index">
+                            <app-img-template (click)="activeTemplate = i" [avatarSrc]="avatarSrc"
+                                              [name]="createForm.get('personName').value"
+                                              [designation]="createForm.get('personPosition').value"
+                                              [bannerName]="bannerName"></app-img-template>
                         </div>
                     </div>
+                    <mat-card class="form_section margin-full">
+                        <div class="form_title">ডিজিটাল ব্যানারের জন্য আপনার তথ্য দিনঃ</div>
+                        <form class="" [formGroup]="createForm">
+                            <div fxLayout="row" fxLayout.xs="column">
+                                <div class="block">
+                                    <div fxLayout="row" fxLayoutAlign="start center" fxFlex="100">
+
+                                        <input type="file" accept="image/png, image/gif, image/jpeg"
+                                               (change)="onFileSelected($event)" [hidden]="true" #imageInput>
+                                        <div class="img_cap_box" (click)="imageInput.click()">
+                                            আপনার ছবি বাছাই করুন
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="block">
+                                    <div fxLayout="row" fxLayoutAlign="start center" fxFlex="100">
+                                        <mat-form-field appearance="outline" fxFlex="100">
+                                            <mat-label> আপনার নাম লিখুন</mat-label>
+                                            <input matInput type="text" class="input_text"
+                                                   formControlName="personName" placeholder="আপনার নাম লিখুন"/>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+
+                                <div class="block">
+                                    <div fxLayout="row" fxLayoutAlign="start center" fxFlex="100">
+                                        <mat-form-field appearance="outline" fxFlex="100">
+                                            <mat-label>আপনার পদবী লিখুন</mat-label>
+                                            <input matInput type="text" class="input_text"
+                                                   formControlName="personPosition" placeholder="আপনার পদবী লিখুন"/>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                            <div  style="margin: auto; width: fit-content;">
+                                <button mat-button class="gen_btn" (click)="captureComponent()">
+                                    <span class="btn_text"> ডাউনলোড করুন</span>
+                                </button>
+                            </div>
+                        </form>
+                    </mat-card>
+
                 </div>
-            </mat-card>
 
-            <div class="download_info">ডাউনলোড করার পূর্বে নিচের যে কোনো একটি নমুনা চিহ্নিত করুন</div>
 
-            <div class="template_section" #componentToCapture>
-                <div class="template" [class.active]="activeTemplate == i"
-                     *ngFor="let bannerName of assetBannerFileNames; let i = index">
-                    <app-img-template (click)="activeTemplate = i" [avatarSrc]="avatarSrc"
-                                      [name]="createForm.get('personName').value"
-                                      [designation]="createForm.get('personPosition').value"
-                                      [bannerName]="bannerName"></app-img-template>
+                <div>
+
                 </div>
             </div>
-            <mat-card class="form_section">
-                <div class="form_title">ডিজিটাল ব্যানারের জন্য আপনার তথ্য দিনঃ</div>
-                <form class="" [formGroup]="createForm">
-                    <div fxLayout="row" fxLayout.xs="column">
-                        <div class="block">
-                            <div fxLayout="row" fxLayoutAlign="start center" fxFlex="100">
-
-                                <input type="file" accept="image/png, image/gif, image/jpeg"
-                                       (change)="onFileSelected($event)" [hidden]="true" #imageInput>
-                                <div class="img_cap_box" (click)="imageInput.click()">
-                                    আপনার ছবি বাছাই করুন
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="block">
-                            <div fxLayout="row" fxLayoutAlign="start center" fxFlex="100">
-                                <mat-form-field appearance="outline" fxFlex="100">
-                                    <mat-label> আপনার নাম লিখুন</mat-label>
-                                    <input matInput type="text" class="input_text"
-                                           formControlName="personName" placeholder="আপনার নাম লিখুন"/>
-                                </mat-form-field>
-                            </div>
-                        </div>
-
-                        <div class="block">
-                            <div fxLayout="row" fxLayoutAlign="start center" fxFlex="100">
-                                <mat-form-field appearance="outline" fxFlex="100">
-                                    <mat-label>আপনার পদবী লিখুন</mat-label>
-                                    <input matInput type="text" class="input_text"
-                                           formControlName="personPosition" placeholder="আপনার পদবী লিখুন"/>
-                                </mat-form-field>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="margin: auto; text-align: center;">
-                        <button class="gen_btn" (click)="captureComponent()">
-                            <span class="btn_text"> ডাউনলোড করুন</span>
-                        </button>
-                    </div>
-                </form>
-            </mat-card>
-
-        </div>
-
-
-        <div>
-
         </div>
     </div>
+    <!-- / CONTENT -->
+
 </div>
+
 
 
 <!--<div class="canvas_box">-->

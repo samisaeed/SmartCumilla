@@ -1,4 +1,4 @@
-# Fuse - Angular
+# Your Digital Banner 
 
 Material Design Admin Template with Angular 8 and Angular Material
 
