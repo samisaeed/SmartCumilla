@@ -27,15 +27,17 @@
     position: absolute;
     left: 26.2%;
     color: white;
-
+    font-family: 'Unicode', sans-serif;
     &.text-1 {
         bottom: 6.5%;
         font-size: 20px;
+        font-family: 'Unicode', sans-serif;
     }
 
     &.text-2 {
         font-size: 14px;
         bottom: 2.7%;
+        font-family: 'Unicode', sans-serif;
     }
 }
 
@@ -44,14 +46,16 @@
         position: absolute;
         left: 26.2%;
         color: white;
-
+        font-family: 'Unicode', sans-serif;
         &.text-1 {
             bottom: 6.5%;
             font-size: 12px!important;
+            font-family: 'Unicode', sans-serif;
         }
 
         &.text-2 {
             font-size: 9px !important;
+            font-family: 'Unicode', sans-serif;
             bottom: 2.7%;
         }
     }
