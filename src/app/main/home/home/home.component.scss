@@ -370,3 +370,20 @@
         font-size: 21px !important;
     }
 }
+
+@media screen and (max-device-width: 599px) {
+
+    .img_section {
+        width:250px;
+    }
+
+}
+@media screen and (max-device-width: 320px) {
+
+    .img_section {
+        width:200px;
+    }
+    .personal_bio_section {
+        margin-left: -22px;
+    }
+}

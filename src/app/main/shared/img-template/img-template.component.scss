@@ -60,3 +60,42 @@
         }
     }
 }
+
+@media screen and (max-device-width: 599px) {
+    .content_text_container {
+        position: absolute;
+        left: 26.2%;
+        color: white;
+        font-family: 'Unicode', sans-serif;
+        &.text-1 {
+            bottom: 6.5%;
+            font-size: 8px!important;
+            font-family: 'Unicode', sans-serif;
+        }
+
+        &.text-2 {
+            font-size: 5px !important;
+            font-family: 'Unicode', sans-serif;
+            bottom: 2.7%;
+        }
+    }
+}
+@media screen and (max-device-width: 400px) {
+    .content_text_container {
+        position: absolute;
+        left: 26.2%;
+        color: white;
+        font-family: 'Unicode', sans-serif;
+        &.text-1 {
+            bottom: 7.5%;
+            font-size: 5px!important;
+            font-family: 'Unicode', sans-serif;
+        }
+
+        &.text-2 {
+            font-size: 3px !important;
+            font-family: 'Unicode', sans-serif;
+            bottom: 4.7%;
+        }
+    }
+}

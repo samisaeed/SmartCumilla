@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit  {
     public candidate = [];
 
     public assetBannerFileNames = [
-        'tem-1', 'tem-2'
+        'tem-1', 'tem-2', 'tem-3', 'tem-4'
     ];
     @ViewChild('screen', { static: false }) screen: ElementRef;
     @ViewChild('canvas', { static: false }) canvas: ElementRef;
@@ -38,7 +38,6 @@ export class HomeComponent implements OnInit  {
             personName: [''],
             personPosition: [''],
         });
-        console.log(window.devicePixelRatio);
     }
     public OnSelect(event): void {
         this.isPersonActive = true;
