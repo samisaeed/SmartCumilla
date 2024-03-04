@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit  {
     public candidate = [];
 
     public assetBannerFileNames = [
-        'tem-1', 'tem-2','tem-4', 'tem-3',
+        'tem-1', 'tem-2', 'tem-4', 'tem-3',
     ];
     @ViewChild('screen', { static: false }) screen: ElementRef;
     @ViewChild('canvas', { static: false }) canvas: ElementRef;
