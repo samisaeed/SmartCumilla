@@ -21,11 +21,8 @@ import { HomeModule } from './main/home/home.module';
 
 const appRoutes: Routes = [
     {
-        path: '', redirectTo: '/', pathMatch: 'full'
-    },
-    {
-        path: '',
-        loadChildren: './main/home/home.module#HomeModule'
+        path: '**',
+        redirectTo: '/'
     },
 ];
 
