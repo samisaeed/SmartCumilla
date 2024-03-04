@@ -4,9 +4,11 @@ Material Design Admin Template with Angular 8 and Angular Material
 
 ## The Community
 
-Share your ideas, discuss Fuse and help each other.
+Copyright © 2024
 
-[Click here](http://fusetheme.com/community) to see our Community page.
+Red Codex
+
+All rights reserved .
 
 ## Development server
 
