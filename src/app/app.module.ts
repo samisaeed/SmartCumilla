@@ -21,10 +21,10 @@ import { HomeModule } from './main/home/home.module';
 
 const appRoutes: Routes = [
     {
-        path: '', redirectTo: '/home', pathMatch: 'full'
+        path: '', redirectTo: '/', pathMatch: 'full'
     },
     {
-        path: 'home',
+        path: '',
         loadChildren: './main/home/home.module#HomeModule'
     },
 ];

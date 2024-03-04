@@ -6,6 +6,6 @@ export const navigation: FuseNavigation[] = [
         title    : 'Applications',
         translate: 'NAV.APPLICATIONS',
         type     : 'item',
-        url      : '/home',
+        url      : '/',
     }
 ];
