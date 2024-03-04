@@ -18,7 +18,18 @@
     display: none;
 }
 
+.companyLogo{
+    width: 60px!important;
+    height: 40px!important;
+}
 
+
+@media screen and (max-device-width: 1024px) {
+    .companyLogo{
+        width: 60px!important;
+        height: 30px!important;
+    }
+}
 @media screen and (max-device-width: 640px) {
     .mobile{
         font-size: 12px!important;

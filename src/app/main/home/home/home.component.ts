@@ -62,7 +62,7 @@ export class HomeComponent implements OnInit  {
     public captureComponent(): void {
         const elements = this.componentToCapture.nativeElement.querySelectorAll('app-img-template');
         const elementToCapture = elements[this.activeTemplate];
-        const scaleValue  =  window.devicePixelRatio <= 2 ? 4 : 14;
+        const scaleValue  =  window.devicePixelRatio <= 2 ?  (window.innerWidth <= 320 ? 8 : 4) : 14;
         html2canvas(elementToCapture, {
             scale: scaleValue , // Adjust scale for higher quality
             logging: true // Enable logging for debugging

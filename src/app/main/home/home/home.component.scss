@@ -330,14 +330,6 @@
     .mobile_padding{
         padding: 5px;
     }
-    .CoverImage {
-        background-image: url('~assets/images/mobile.jpg');
-        max-width: 606px;
-        min-height: 500px;
-        -moz-background-size: cover;
-        -webkit-background-size: cover;
-        -o-background-size: cover;
-    }
     .form_section {
         margin: 6rem auto 4rem!important;
     }
@@ -375,18 +367,48 @@
 }
 
 @media screen and (max-device-width: 599px) {
-
+    .CoverImage {
+        background-image: url('~assets/images/mobile.jpg');
+        max-width: 606px;
+        min-height: 500px;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+    }
     .img_section {
         width:250px;
     }
 
 }
+@media screen and (max-device-width: 425px) {
+    .CoverImage {
+        background-image: url('~assets/images/mobile.jpg');
+        max-width: 606px;
+        min-height: 500px;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+    }
+    .form_title {
+        font-size: 17px !important;
+    }
+}
 @media screen and (max-device-width: 320px) {
-
+    .CoverImage {
+        background-image: url('~assets/images/mobile.jpg');
+        max-width: 606px;
+        min-height: 375px!important;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+    }
     .img_section {
         width:200px;
     }
     .personal_bio_section {
         margin-left: -22px;
+    }
+    .img_cap_box {
+        font-size: 13px;
     }
 }
