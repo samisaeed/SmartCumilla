@@ -21,15 +21,12 @@ import { HomeModule } from './main/home/home.module';
 
 const appRoutes: Routes = [
     {
-        path: '**',
-        redirectTo: '/',
-        // pathMatch: 'full',
+        path: '', redirectTo: '/home', pathMatch: 'full'
     },
     {
-        path: '',
-        loadChildren: () => import('./main/home/home.module')
-            .then(m => m.HomeModule),
-    }
+        path: 'home',
+        loadChildren: './main/home/home.module#HomeModule'
+    },
 ];
 
 @NgModule({
