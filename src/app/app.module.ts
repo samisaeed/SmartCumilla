@@ -55,7 +55,6 @@ const appRoutes: Routes = [
         // App modules
         LayoutModule,
         HomeModule,
-        // SampleModule
     ],
     bootstrap: [
         AppComponent

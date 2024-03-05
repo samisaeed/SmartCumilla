@@ -70,10 +70,10 @@
                     </form>
                 </mat-card>
 
-                <div *ngIf="!isPersonActive">
+                <div *ngIf="isPersonActive">
                     <mat-card class="person_details margin-full" fxLayout="row " fxLayoutAlign=" space-around center">
 
-                        <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between start" fxLayoutGap="20px" >
+                        <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between start" fxLayoutGap="20px">
                             <div class="">
                                 <div class="img_section">
                                     <img class="img_person" src="assets/images/bio2.JPG" alt="person"/>
@@ -236,7 +236,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div  style="margin: auto; width: fit-content;">
+                            <div style="margin: auto; width: fit-content;">
                                 <button mat-button class="gen_btn" (click)="captureComponent()">
                                     <span class="btn_text"> ডাউনলোড করুন</span>
                                 </button>
@@ -256,7 +256,6 @@
     <!-- / CONTENT -->
 
 </div>
-
 
 
 <!--<div class="canvas_box">-->

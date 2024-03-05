@@ -1,26 +1,26 @@
 .template_img_container {
-  position: relative;
-  width: 100%;
+    position: relative;
+    width: 100%;
 }
 
 .template_img {
-  position: relative;
-  width: 100%;
+    position: relative;
+    width: 100%;
 }
 
 .content_img_container {
-  position: absolute;
-  bottom: 4.3%;
-  left: 6.4%;
-  width: 18%;
-  height: 18%;
-  overflow: hidden;
-  border-radius: 100%;
+    position: absolute;
+    bottom: 4.3%;
+    left: 6.4%;
+    width: 18%;
+    height: 18%;
+    overflow: hidden;
+    border-radius: 100%;
 
-  img {
-    width: 100%;
-    height: 100%;
-  }
+    img {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .content_text_container {
@@ -28,6 +28,7 @@
     left: 26.2%;
     color: white;
     font-family: 'Unicode', sans-serif;
+
     &.text-1 {
         bottom: 7.5%;
         font-size: 28px;
@@ -44,25 +45,26 @@
 
 @media screen and (max-device-width: 2200px) {
 
-.content_text_container {
-    position: absolute;
-    left: 26.2%;
-    color: white;
-    font-family: 'Unicode', sans-serif;
-    &.text-1 {
-        bottom: 7.5%;
-        font-size: 16px;
+    .content_text_container {
+        position: absolute;
+        left: 26.2%;
+        color: white;
         font-family: 'Unicode', sans-serif;
-    }
 
-    &.text-2 {
-        font-size: 10px;
-        bottom: 1.7%;
-        font-family: 'Unicode', sans-serif;
-        width: 170px;
+        &.text-1 {
+            bottom: 7.5%;
+            font-size: 16px;
+            font-family: 'Unicode', sans-serif;
+        }
+
+        &.text-2 {
+            font-size: 10px;
+            bottom: 1.7%;
+            font-family: 'Unicode', sans-serif;
+            width: 170px;
+        }
     }
-}
-    .limitBottom{
+    .limitBottom {
         bottom: 3.7% !important;
     }
 }
@@ -73,6 +75,7 @@
         left: 26.2%;
         color: white;
         font-family: 'Unicode', sans-serif;
+
         &.text-1 {
             bottom: 7.5%;
             font-size: 16px;
@@ -86,30 +89,32 @@
             width: 170px;
         }
     }
-    .limitBottom{
+    .limitBottom {
         bottom: 4.7% !important;
     }
 }
+
 @media screen and (max-device-width: 1024px) {
     .content_text_container {
-    position: absolute;
-    left: 26.2%;
-    color: white;
-    font-family: 'Unicode', sans-serif;
-    &.text-1 {
-        bottom: 7.5%;
-        font-size: 10px;
+        position: absolute;
+        left: 26.2%;
+        color: white;
         font-family: 'Unicode', sans-serif;
-    }
 
-    &.text-2 {
-        font-size: 7px;
-        bottom: 0.7%;
-        font-family: "Unicode", sans-serif;
-        width: 120px;
+        &.text-1 {
+            bottom: 7.5%;
+            font-size: 10px;
+            font-family: 'Unicode', sans-serif;
+        }
+
+        &.text-2 {
+            font-size: 7px;
+            bottom: 0.7%;
+            font-family: "Unicode", sans-serif;
+            width: 120px;
+        }
     }
-}
-    .limitBottom{
+    .limitBottom {
         bottom: 3.7% !important;
     }
 }
@@ -120,9 +125,10 @@
         left: 26.2%;
         color: white;
         font-family: 'Unicode', sans-serif;
+
         &.text-1 {
             bottom: 6.5%;
-            font-size: 12px!important;
+            font-size: 12px !important;
             font-family: 'Unicode', sans-serif;
         }
 
@@ -140,9 +146,10 @@
         left: 26.2%;
         color: white;
         font-family: 'Unicode', sans-serif;
+
         &.text-1 {
             bottom: 7%;
-            font-size: 8px!important;
+            font-size: 8px !important;
             font-family: 'Unicode', sans-serif;
         }
 
@@ -154,12 +161,14 @@
         }
     }
 }
+
 @media screen and (max-device-width: 425px) {
     .content_text_container {
         position: absolute;
         left: 26.2%;
         color: white;
         font-family: 'Unicode', sans-serif;
+
         &.text-1 {
             bottom: 8.5%;
             font-size: 6px !important;
@@ -173,10 +182,6 @@
             font-family: "Unicode", sans-serif;
             bottom: 1.7%;
             line-height: 8px;
-            //
-            //font-size: 3px !important;
-            //font-family: 'Unicode', sans-serif;
-            //bottom: 3.7%;
         }
     }
 }
@@ -188,17 +193,14 @@
         left: 26.2%;
         color: white;
         font-family: 'Unicode', sans-serif;
+
         &.text-1 {
             bottom: 7.5%;
-            font-size: 5px!important;
+            font-size: 5px !important;
             font-family: 'Unicode', sans-serif;
         }
 
         &.text-2 {
-            //font-size: 3px !important;
-            //font-family: 'Unicode', sans-serif;
-            //bottom: 2.7%;
-            //width: 70px;
             font-size: 3px !important;
             font-family: "Unicode", sans-serif;
             bottom: 1.7%;

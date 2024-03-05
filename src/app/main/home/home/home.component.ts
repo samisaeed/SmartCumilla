@@ -36,17 +36,15 @@ export class HomeComponent implements OnInit  {
             division: ['', Validators.required],
             name: ['', [Validators.required]],
             candidate: ['', [Validators.required]],
-            personName: ['নূর-উর রহমান মাহমুদ তানিম'],
-            personPosition: [' ভিপি ১৯৯৬-৯৭ কুমিল্লা ভিক্টোরিয়া বিশ্ববিদ্যালয় কলেজ'],
+            personName: [''],
+            personPosition: [''],
         });
         this.createForm.get('personPosition').valueChanges.subscribe((res) => {
             if (res){
                 if (res.length <=  47 ){
                     this.limitOver = true;
-                    console.log(this.limitOver);
                 }else {
                     this.limitOver = false;
-                    console.log(this.limitOver);
                 }
 
             }
