@@ -27,6 +27,7 @@ export class HomeComponent implements OnInit  {
     public name: any = '';
     public designation: any = '';
     public activeTemplate = 0;
+    public limitOver = false;
     constructor(private formBuilder: FormBuilder) {}
 
 
@@ -35,8 +36,20 @@ export class HomeComponent implements OnInit  {
             division: ['', Validators.required],
             name: ['', [Validators.required]],
             candidate: ['', [Validators.required]],
-            personName: [''],
-            personPosition: [''],
+            personName: ['নূর-উর রহমান মাহমুদ তানিম'],
+            personPosition: [' ভিপি ১৯৯৬-৯৭ কুমিল্লা ভিক্টোরিয়া বিশ্ববিদ্যালয় কলেজ'],
+        });
+        this.createForm.get('personPosition').valueChanges.subscribe((res) => {
+            if (res){
+                if (res.length <=  47 ){
+                    this.limitOver = true;
+                    console.log(this.limitOver);
+                }else {
+                    this.limitOver = false;
+                    console.log(this.limitOver);
+                }
+
+            }
         });
     }
     public OnSelect(event): void {

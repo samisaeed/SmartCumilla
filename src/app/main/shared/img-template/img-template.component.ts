@@ -10,6 +10,7 @@ export class ImgTemplateComponent implements OnInit {
   @Input() avatarSrc: string;
   @Input() name: string;
   @Input() designation: string;
+  @Input() limitOver: boolean;
   constructor() { }
 
   ngOnInit(): void {

@@ -41,6 +41,7 @@
         width: 355px;
     }
 }
+
 @media screen and (max-device-width: 2200px) {
 
 .content_text_container {
@@ -56,14 +57,39 @@
 
     &.text-2 {
         font-size: 10px;
-        bottom: 2.7%;
+        bottom: 1.7%;
         font-family: 'Unicode', sans-serif;
         width: 170px;
     }
 }
+    .limitBottom{
+        bottom: 3.7% !important;
+    }
 }
 
+@media screen and (max-device-width: 2700px) {
+    .content_text_container {
+        position: absolute;
+        left: 26.2%;
+        color: white;
+        font-family: 'Unicode', sans-serif;
+        &.text-1 {
+            bottom: 7.5%;
+            font-size: 16px;
+            font-family: 'Unicode', sans-serif;
+        }
 
+        &.text-2 {
+            font-size: 10px;
+            bottom: 2.7%;
+            font-family: 'Unicode', sans-serif;
+            width: 170px;
+        }
+    }
+    .limitBottom{
+        bottom: 4.7% !important;
+    }
+}
 @media screen and (max-device-width: 1024px) {
     .content_text_container {
     position: absolute;
@@ -83,6 +109,9 @@
         width: 120px;
     }
 }
+    .limitBottom{
+        bottom: 3.7% !important;
+    }
 }
 
 @media screen and (max-device-width: 640px) {

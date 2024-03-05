@@ -70,7 +70,7 @@
                     </form>
                 </mat-card>
 
-                <div *ngIf="isPersonActive">
+                <div *ngIf="!isPersonActive">
                     <mat-card class="person_details margin-full" fxLayout="row " fxLayoutAlign=" space-around center">
 
                         <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between start" fxLayoutGap="20px" >
@@ -196,6 +196,7 @@
                              *ngFor="let bannerName of assetBannerFileNames; let i = index">
                             <app-img-template (click)="activeTemplate = i" [avatarSrc]="avatarSrc"
                                               [name]="createForm.get('personName').value"
+                                              [limitOver]="this.limitOver"
                                               [designation]="createForm.get('personPosition').value"
                                               [bannerName]="bannerName"></app-img-template>
                         </div>
